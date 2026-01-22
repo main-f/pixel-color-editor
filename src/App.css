@@ -1,0 +1,160 @@
+.app-root {
+  min-height: 100vh;
+  padding: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #0b1020;
+  color: #f3f4f6;
+  box-sizing: border-box;
+}
+
+.app-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lang-switcher {
+  display: flex;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 16px;
+  z-index: 10;
+}
+
+@media (min-width: 800px) {
+  .lang-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+  }
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 98vw;
+  margin: 0 auto;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 32px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-sizing: border-box;
+}
+
+/* Make the operations manual hint take full width */
+.controls > div.hint {
+  width: 100%;
+  margin-top: 4px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+}
+
+.controls > p.hint {
+  margin: 0;
+  width: 100%; /* Force it to break row if needed, or let it flow */
+  line-height: 1.4;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.control-group span {
+  font-weight: 500;
+}
+
+.control-group input[type="file"],
+.control-group select {
+  font-size: 14px;
+}
+
+.hint {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.canvas-panel {
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.canvas-panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.pixel-canvas {
+  display: block;
+  /* background: #020617; to avoid lowering the readability */
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  margin: 0 auto;
+}
+
+.pixel-canvas-preview {
+  cursor: default;
+}
+
+/* 覆盖 hover 效果，保持预览窗格静止 */
+.pixel-canvas-preview:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+/* 底部两个窗格的容器 */
+.canvas-row {
+  display: flex;
+  flex-wrap: wrap;        /* 小屏可以换行 */
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* 每个窗格的卡片样式（你如果已有 .canvas-panel，就只加 flex 部分） */
+.canvas-panel {
+  flex: 1;
+  min-width: 360px;
+}
+.bg-color-input {
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+  background: transparent;
+  height: 40px;
+}
